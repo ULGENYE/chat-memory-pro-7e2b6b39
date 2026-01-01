@@ -119,12 +119,6 @@ const Index = () => {
         />
       </main>
 
-      {/* API Loading Indicator */}
-      {!apiLoaded && (
-        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-card border border-border px-4 py-2 rounded-full text-sm text-muted-foreground animate-pulse">
-          API yükleniyor...
-        </div>
-      )}
     </div>
   );
 };
