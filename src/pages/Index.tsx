@@ -31,10 +31,6 @@ const Index = () => {
     script.async = true;
     script.onload = () => {
       setApiLoaded(true);
-      toast({
-        title: 'API Yüklendi',
-        description: 'AI asistanı kullanıma hazır.',
-      });
     };
     script.onerror = () => {
       toast({
