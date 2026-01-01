@@ -29,9 +29,9 @@ export const ChatArea = ({ conversation, onSendMessage, isLoading }: ChatAreaPro
             <Bot className="w-10 h-10 text-primary" />
           </div>
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-2">
-              NexusAI'ye Hoş Geldiniz
-            </h2>
+          <h2 className="text-2xl font-semibold text-foreground mb-2">
+            InformationChatAI'ye Hoş Geldiniz
+          </h2>
             <p className="text-muted-foreground">
               Yeni bir sohbet başlatmak için sol menüden "Yeni Sohbet" butonuna tıklayın.
             </p>

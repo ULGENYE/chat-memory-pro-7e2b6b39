@@ -39,7 +39,7 @@ export const ChatSidebar = ({
             <Bot className="w-5 h-5 text-primary" />
           </div>
           <div>
-            <h1 className="font-semibold text-foreground">NexusAI</h1>
+            <h1 className="font-semibold text-foreground text-sm">InformationChatAI</h1>
             <p className="text-xs text-muted-foreground">Akıllı Asistan</p>
           </div>
         </div>
