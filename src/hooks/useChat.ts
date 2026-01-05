@@ -1,12 +1,10 @@
 import { useState, useCallback } from 'react';
 
 declare global {
-  interface Window {
-    apifree: {
-      chat: (message: string) => Promise<string>;
-      print: (response: string) => void;
-    };
-  }
+  const apifree: {
+    chat: (message: string) => Promise<string>;
+    print: (response: string) => void;
+  };
 }
 
 export const useChat = () => {
@@ -16,12 +14,11 @@ export const useChat = () => {
     setIsLoading(true);
     
     try {
-      // Check if apifree is loaded
-      if (!window.apifree) {
+      if (typeof apifree === 'undefined') {
         throw new Error('API henüz yüklenmedi. Lütfen sayfayı yenileyin.');
       }
 
-      const response = await window.apifree.chat(message);
+      const response = await apifree.chat(message);
       return response;
     } catch (error) {
       console.error('Chat error:', error);
