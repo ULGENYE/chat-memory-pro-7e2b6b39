@@ -30,6 +30,10 @@ const Index = () => {
     script.src = 'https://apifreellm.com/apifree.min.js';
     script.async = true;
     script.onload = () => {
+      // Set API key
+      if (typeof apifree !== 'undefined') {
+        (apifree as any).key = '95fd36ff36ca42c1bf57633ff6fe6d7f';
+      }
       setApiLoaded(true);
     };
     script.onerror = () => {
