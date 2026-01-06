@@ -5,8 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // BURAYA EKLEDİK: Tırnak içindeki kısma GitHub'daki depo (repository) adını yaz
-  base: "/https://ulgenye.github.io/chat-memory-pro-7e2b6b39/", 
+  base: "/chat-memory-pro-7e2b6b39/",
   
   server: {
     host: "::",
