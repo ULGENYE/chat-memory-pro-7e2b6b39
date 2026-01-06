@@ -5,11 +5,13 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/chat-memory-pro-7e2b6b39/",
+  base: '/chat-memory-pro-7e2b6b39/', // Senin repo adın bu olduğu için böyle olmalı
+
+// ... kodun geri kalanı aynı kalacak
   
   server: {
     host: "::",
-    port: 8080,
+    
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
