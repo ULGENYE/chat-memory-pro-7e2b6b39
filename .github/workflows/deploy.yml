@@ -2,7 +2,7 @@ name: Deploy Lovable Site
 
 on:
   push:
-    branches: ["main"] # Eğer ana dalın adı 'master' ise burayı 'master' yap
+    branches: ["main"] # Eğer ana dalının adı master ise burayı master yap
 
 permissions:
   contents: read
@@ -27,7 +27,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # Lovable/Vite genelde çıktıları 'dist' klasörüne atar
+          path: ./dist
 
   deploy:
     environment:
