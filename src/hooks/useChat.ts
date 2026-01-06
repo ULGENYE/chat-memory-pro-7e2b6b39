@@ -3,7 +3,10 @@ import { useState, useCallback } from 'react';
 declare global {
   const puter: {
     ai: {
-      chat: (message: string, options?: { model?: string }) => Promise<string>;
+      chat: (message: string, options?: { model?: string }) => Promise<{
+        message?: { content?: string };
+        toString?: () => string;
+      }>;
     };
     print: (response: string) => void;
   };
@@ -21,7 +24,9 @@ export const useChat = () => {
       }
 
       const response = await puter.ai.chat(message, { model: 'gpt-4o-mini' });
-      return response;
+      // Extract text content from response object
+      const text = response?.message?.content || response?.toString?.() || String(response);
+      return text;
     } catch (error) {
       console.error('Chat error:', error);
       throw error;
