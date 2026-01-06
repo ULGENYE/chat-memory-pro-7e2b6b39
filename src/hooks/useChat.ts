@@ -1,8 +1,10 @@
 import { useState, useCallback } from 'react';
 
 declare global {
-  const apifree: {
-    chat: (message: string) => Promise<string>;
+  const puter: {
+    ai: {
+      chat: (message: string, options?: { model?: string }) => Promise<string>;
+    };
     print: (response: string) => void;
   };
 }
@@ -14,11 +16,11 @@ export const useChat = () => {
     setIsLoading(true);
     
     try {
-      if (typeof apifree === 'undefined') {
+      if (typeof puter === 'undefined') {
         throw new Error('API henüz yüklenmedi. Lütfen sayfayı yenileyin.');
       }
 
-      const response = await apifree.chat(message);
+      const response = await puter.ai.chat(message, { model: 'gpt-4o-mini' });
       return response;
     } catch (error) {
       console.error('Chat error:', error);
